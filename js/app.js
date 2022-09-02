@@ -73,7 +73,7 @@ const displayCategoryNews = (data) => {
   <figure><img src="${thumbnail_url}" alt="Movie"></figure>
   <div class="card-body">
     <h2 class="card-title">${title}</h2>
-    <p>Click the button to watch on Jetflix app.</p>
+    <p>${details.length > 250 ? details.slice(0, 250) + "..." : details}</p>
     <div class="card-actions justify-end">
       <button class="btn btn-primary">Watch</button>
     </div>

@@ -61,20 +61,34 @@
         </div>
         <!-- no found text end -->
         <!-- grid system start -->
-        <div id="news-card" class="grid grid-cols-1 gap-4">
-          <div class="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Watch</button>
+        <!-- sample card start  -->
+        <div class="card card-side bg-base-100 shadow-xl">
+          <figure>
+            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">New movie is released!</h2>
+            <p>Click the button to watch on Jetflix app.</p>
+
+            <div class="card-actions justify-between">
+              <div id="author-detail" class="flex">
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <div>
+                  <span>Author Name</span>
+                  <br /><span>join date</span>
+                </div>
               </div>
+              <div id="news-view">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <button class="btn btn-primary">Watch</button>
             </div>
           </div>
         </div>
+        <!-- sample card end -->
+        <div id="news-card" class="grid grid-cols-1 gap-4"></div>
         <!-- grid system end -->
       </section>
     </main>
