@@ -21,11 +21,11 @@
       <!-- section for header menu start -->
       <div class="navbar bg-base-100">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl">Dailey News</a>
+          <a class="btn btn-ghost normal-case text-xl">News For Truths </a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal p-0">
-            <li><a>Dailey News</a></li>
+            <li><a>Daily News</a></li>
             <li href="#">
               <a> My Blogs </a>
             </li>
@@ -40,23 +40,22 @@
 
       <!-- section for category menu start -->
 
-      <section class="d-flex" id="category-header">
-        <ul class="flex justify-around">
-          <li>item1</li>
-          <li>item1</li>
-          <li>item1</li>
-          <li>item1</li>
-          <li>item1</li>
-          <li>item1</li>
-        </ul>
+      <section class="d-flex">
+        <ul id="category-header" class="flex justify-around"></ul>
       </section>
       <!-- section for category menu end -->
       <!-- secton total news info start -->
       <section id="news-count"></section>
       <!-- secton total news info end -->
     </header>
-    <h1 class="text-5xl text-center text-bold">Welcome To My News World</h1>
-    <section></section>
+    <main>
+      <h1 class="text-5xl text-center text-bold">Welcome To My News World</h1>
+      <section>
+        <!-- grid system start -->
+        <div id="news-card" class="grid grid-cols-1 gap-4"></div>
+        <!-- grid system end -->
+      </section>
+    </main>
 
     <script src="./js/app.js"></script>
   </body>
