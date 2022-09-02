@@ -40,8 +40,16 @@ const loadCategoryNews = (id) => {
 };
 loadCategoryNews();
 const displayCategoryNews = (data) => {
+  console.log(data.length);
+  const noData = document.getElementById("no-data");
+  if (data.length === 0) {
+    noData.classList.remove("hidden");
+  } else {
+    noData.classList.add("hidden");
+  }
   const newsCount = document.getElementById("news-count");
   const newsCard = document.getElementById("news-card");
+  newsCard.textContent = "";
   newsCount.innerHTML = `
   <h2>${data.length} news Found</h2>
   `;
@@ -49,12 +57,22 @@ const displayCategoryNews = (data) => {
   console.log(data);
   data.forEach((newses) => {
     console.log(newses);
+    const {
+      author,
+      details,
+      image_url,
+      thumbnail_url,
+      total_view,
+      _id,
+      title,
+      rating,
+    } = newses;
     const cardBody = document.createElement("div");
     cardBody.innerHTML = `
     <div class="card card-side bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/200/280/arch" alt="Movie"></figure>
+  <figure><img src="${thumbnail_url}" alt="Movie"></figure>
   <div class="card-body">
-    <h2 class="card-title">New movie is released!</h2>
+    <h2 class="card-title">${title}</h2>
     <p>Click the button to watch on Jetflix app.</p>
     <div class="card-actions justify-end">
       <button class="btn btn-primary">Watch</button>
@@ -62,6 +80,6 @@ const displayCategoryNews = (data) => {
   </div>
 </div>
     `;
-    console.log(newses);
+    newsCard.appendChild(cardBody);
   });
 };

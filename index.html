@@ -49,10 +49,32 @@
       <!-- secton total news info end -->
     </header>
     <main>
-      <h1 class="text-5xl text-center text-bold">Welcome To My News World</h1>
+      <h1 class="text-5xl text-center text-bold mb-5">
+        Welcome To My News World
+      </h1>
       <section>
+        <!-- no found text start -->
+        <div id="no-data" class="hidden">
+          <h2 class="text-5xl text-center text-orange-400 text-bold">
+            No data Found
+          </h2>
+        </div>
+        <!-- no found text end -->
         <!-- grid system start -->
-        <div id="news-card" class="grid grid-cols-1 gap-4"></div>
+        <div id="news-card" class="grid grid-cols-1 gap-4">
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure>
+              <img src="https://placeimg.com/200/280/arch" alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">New movie is released!</h2>
+              <p>Click the button to watch on Jetflix app.</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Watch</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- grid system end -->
       </section>
     </main>
