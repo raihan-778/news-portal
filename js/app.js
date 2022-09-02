@@ -75,6 +75,18 @@ const displayCategoryNews = (data) => {
     <h2 class="card-title">${title}</h2>
     <p>${details.length > 250 ? details.slice(0, 250) + "..." : details}</p>
     <div class="card-actions justify-end">
+        <div id="author-detail" class="flex">
+        <div>
+          <img class="w-1/6 rounded-2"  src="${author.img}" alt="" />
+        </div>
+        <div>
+          <span>${author.name}</span>
+          <br /><span>Published Date:${author.published_date}</span>
+        </div>
+        </div>
+        <div id="news-view">
+          <i class="fa-solid fa-eye"></i>
+        </div>
       <button class="btn btn-primary">Watch</button>
     </div>
   </div>
