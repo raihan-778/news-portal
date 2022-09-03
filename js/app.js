@@ -92,7 +92,7 @@ const displayCategoryNews = (data) => {
           
             <h2 class="card-title">${title}</h2>
             <p>${
-              details.length > 250 ? details.slice(0, 250) + "..." : details
+              details.length > 350 ? details.slice(0, 350) + "..." : details
             }</p>
             <div class="card-actions mt-5 sm:justify-column justify-around">    
                 <div id="author-detail" class="w-4/12 xl:flex-row  sm:flex-col flex justify-start">
