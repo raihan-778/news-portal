@@ -31,15 +31,17 @@ const displayCategory = (data) => {
 };
 
 //code for load category News
+
 const loadCategoryNews = (id) => {
   const newsApi = `https://openapi.programming-hero.com/api/news/category/${id}`;
   console.log(newsApi);
+
   fetch(newsApi)
     .then((res) => res.json())
     .then((data) => displayCategoryNews(data.data))
     .catch((error) => console.log(error));
 };
-loadCategoryNews();
+
 const displayCategoryNews = (data) => {
   console.log(data.length);
   const noData = document.getElementById("no-data");
@@ -77,8 +79,8 @@ const displayCategoryNews = (data) => {
             <p>${
               details.length > 250 ? details.slice(0, 250) + "..." : details
             }</p>
-            <div class="card-actions mt-5 justify-around">    
-                <div id="author-detail" class="w-4/12  flex justify-start">
+            <div class="card-actions mt-5 sm:justify-column justify-around">    
+                <div id="author-detail" class="w-4/12 sm:flex-column flex justify-start">
                   <img class="w-3/12 rounded-full" p-2 src="${
                     author.img
                   }" alt="" />
@@ -102,6 +104,7 @@ const displayCategoryNews = (data) => {
         `;
     newsCard.appendChild(cardBody);
   });
+  toggleSpinner(false);
 };
 loadCategoryNews("01");
 
@@ -109,7 +112,7 @@ loadCategoryNews("01");
 
 const loadNewsDetails = (id) => {
   const newsApi = `https://openapi.programming-hero.com/api/news/${id}`;
-  const spinnere = document.getElementById("spinner");
+
   fetch(newsApi)
     .then((res) => res.json())
     .then((data) => {
@@ -158,4 +161,53 @@ const showNewsDetails = (newsDetails) => {
       </div>
   `;
 };
+
+const displayBlog = () => {
+  myBlog = document.getElementById("blog-content");
+  myBlog.innerHTML = `<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+  <div class="collapse-title text-xl font-medium">
+    Question: What is the diffrence Map, forEach, Filter ,Find
+  </div>
+  <div class="collapse-content"> 
+    <p>Map: it is used for loop throw an array, and return a new array.</p>
+      <p>forEach:
+      It is also used for loop throw an array but it will not return any array.</p>
+      <p>
+      Filter:
+      Filter is used to loop throw an array where condition is given, filter returns a new array with the value which meet the condition.</p>
+      <p>Find:Find is loop throw an array until it find the first value which meet the condition. After getting the first value it will stop loop and return the result.</p>
+  </div>
+</div>
+<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+  <div class="collapse-title text-xl font-medium">
+    Question: What is the diffrence between varables "var", "let", "const".
+  </div>
+  <div class="collapse-content"> 
+    <p>var: Var is oldest version of variable which is a global scope variable.</p>
+     <p> let: Let is an upgrade version of variable var.let is a block scope variable.</p>
+    <p> Const: It is a block scope variable & user can not update the value of const variable.</p>
+  </div>
+</div>
+<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+  <div class="collapse-title text-xl font-medium">
+    Question: What is the diffrence between Arraw function and regular function.
+  </div>
+  <div class="collapse-content"> 
+    <p>Ans: Arrow Function: Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
+
+    <p>  Regular Function:It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
+  </div>
+</div>
+  `;
+};
 loadNewsDetails();
+// code for spinner
+const toggleSpinner = (isLoading) => {
+  const loaderSection = document.getElementById("spinner");
+  if (isLoading) {
+    loaderSection.classList.remove("hidden");
+  } else {
+    loaderSection.classList.add("hidden");
+  }
+};
+toggleSpinner(true);
