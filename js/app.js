@@ -36,7 +36,8 @@ const loadCategoryNews = (id) => {
   console.log(newsApi);
   fetch(newsApi)
     .then((res) => res.json())
-    .then((data) => displayCategoryNews(data.data));
+    .then((data) => displayCategoryNews(data.data))
+    .catch((error) => console.log(error));
 };
 loadCategoryNews();
 const displayCategoryNews = (data) => {
@@ -90,7 +91,7 @@ const displayCategoryNews = (data) => {
               <div id="news-view">
               Total Views: <i class="fa-solid fa-eye"></i> ${total_view}
               </div>
-              <label for="my-modal-5" class="btn btn-primary modal-button">Show Details</label>      
+              <label for="my-modal-5" onclick='loadNewsDetails("${_id}")' class="btn btn-primary modal-button">Show Details</label>      
             </div>
           </div>
         </div>
@@ -98,3 +99,57 @@ const displayCategoryNews = (data) => {
     newsCard.appendChild(cardBody);
   });
 };
+
+// code for load new details
+
+const loadNewsDetails = (id) => {
+  const newsApi = `https://openapi.programming-hero.com/api/news/${id}`;
+  fetch(newsApi)
+    .then((res) => res.json())
+    .then((data) => {
+      data.data[0];
+      return showNewsDetails(data.data[0]);
+    })
+    .catch((error) => console.log(error));
+};
+
+const showNewsDetails = (newsDetails) => {
+  console.log(newsDetails);
+
+  const {
+    author,
+    details,
+    image_url,
+    thumbnail_url,
+    total_view,
+    _id,
+    title,
+    rating,
+  } = newsDetails;
+  console.log(total_view);
+  console.log(author);
+  const modatContainer = document.getElementById("modal-box");
+  modatContainer.innerHTML = `
+        <img src="${image_url}">
+      <h3 class="font-bold text-lg mt-5">
+       ${details.length > 600 ? details.slice(0, 600) + "..." : details}
+      </h3>
+      <div class="flex-column mt-5">
+      <div id="author-detail" class="w-4/12 flex justify-between">
+        <img class="w-2/12 rounded-full"  src="${author.img}" alt="" />
+        <div>
+          <span>Author Name: ${author.name}</span>
+          <br /><span>Published Date:${author.published_date}</span>
+        </div>
+      </div>
+
+        <div id="news-view" class="mt-3">
+        Total Views: <i class="fa-solid fa-eye"></i> ${total_view}
+        </div> 
+    </div>
+      <div class="modal-action">
+        <label for="my-modal-5" class="btn">Yay!</label>
+      </div>
+  `;
+};
+loadNewsDetails();
