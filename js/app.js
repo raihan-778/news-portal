@@ -183,7 +183,7 @@ const displayBlog = () => {
   myBlog = document.getElementById("blog-content");
   myBlog.innerHTML = `<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
     <div class="collapse-title text-xl font-medium">
-      Question: What is the diffrence Map, forEach, Filter ,Find
+      Question: What is the diffrence between Map, forEach, Filter ,Find
     </div>
     <div class="collapse-content"> 
       <p class="text-2xl"><span class="text-2xl text-blue-500 text-bold">Map:</span> It is used for loop throw an array, and return a new array.</p>
@@ -210,11 +210,20 @@ const displayBlog = () => {
       Question: What is the diffrence between Arraw function and regular function.
     </div>
     <div class="collapse-content"> 
-      <p class="text-bold">Ans:<span class="text-2xl text-blue-500 text-bold">Arrow Function:</span>  Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
+      <p><span class="text-2xl text-blue-500 text-bold">Arrow Function:</span>  Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
 
       <p> <span class="text-2xl text-blue-500 text-bold">Regular Function:</span> It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
     </div>
   </div>
+  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+    <div class="collapse-title text-xl font-medium">
+    Question: Why should we use templet string in javaScript?
+    </div>
+    <div class="collapse-content"> 
+      <p><span class="text-2xl text-blue-500 text-bold">Templet String:</span> Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. <br>Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.</p>
+    </div>
+    </div>
+  
     `;
 };
 
