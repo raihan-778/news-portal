@@ -30,12 +30,12 @@
     <header class="mb-7 p-3">
       <!-- section for header menu start -->
       <div class="navbar bg-base-100">
-        <div class="flex-1">
+        <div class="flex-1 flex-col sm:flex-col">
           <a class="btn btn-ghost normal-case rounded text-xl">Explore  <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-4xl">The Truths</span> </a>
         </div>
         <div class="flex-none">
-          <ul class="menu grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-6 menu-horizontal p-0">
-            <li><a>Daily News</a></li>
+          <ul class="menu grid font-bold lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-6 menu-horizontal p-0">
+            <li ><a>Daily News</a></li>
             <li id="blog-list" onclick="displayBlog()" href="#">
               <a> My Blogs </a>
             </li>
@@ -51,7 +51,7 @@
       <!-- section for category menu start -->
 
       <section class="d-flex">
-        <ul id="category-header" class="flex grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-6 justify-around">
+        <ul id="category-header" class="flex grid font-semibold lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-6 justify-around  sm:justify-center">
 
         </ul>
       </section>
@@ -71,14 +71,14 @@
           <!-- dynamic content will be added here -->
         </div>
        </section>
-      <h1 class="text-5xl text-center text-bold mb-5">
+      <h1 class="text-3xl text-center font-bold mb-5">
         Welcome To My News World
       </h1>
          
          
         <!-- no found text start -->
         <div id="no-data" class="hidden">
-          <h2 class="text-5xl text-center text-orange-400 text-bold">
+          <h2 class="text-2xl text-center text-orange-400 font-bold">
             No data Found
           </h2>
         </div>

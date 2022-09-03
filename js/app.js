@@ -21,7 +21,12 @@ const displayCategory = (data) => {
       newArray.push(category_name);
       console.log(newArray);
       const li = document.createElement("li");
-      li.classList.add("text-green-900", "text-lg");
+      li.classList.add(
+        "text-green-900",
+        "font-bold",
+        "cursor-pointer",
+        "hover:text-sky-300"
+      );
       li.innerHTML = `
         <a onclick="loadCategoryNews('${category_id}')" >${category_name}</a>
         `;
@@ -55,10 +60,11 @@ const displayCategoryNews = (data) => {
   const newsCard = document.getElementById("news-card");
   newsCard.textContent = "";
   newsCount.innerHTML = `
-      <h2 class="text-center text-3xl">${data.length} News Found</h2>
+      <h2 class="text-center font-bold text-3xl"><span class="text-blue-500">${data.length}</span> News Found</h2>
       `;
 
   console.log(data);
+  data.sort((a, b) => b.total_view - a.total_view);
   data.forEach((newses) => {
     console.log(newses);
     const {
@@ -73,8 +79,8 @@ const displayCategoryNews = (data) => {
     } = newses;
     const cardBody = document.createElement("div");
     cardBody.innerHTML = `
-        <div class="card card-side lg:xl:flex-row md:flex-row sm:flex-col  bg-base-100 shadow-xl">
-        <figure class="w-6/12"><img " src="${thumbnail_url}" alt="Movie"></figure>
+        <div class="card card-side lg:flex-row md:flex-row flex-col sm:flex-col  bg-base-100 shadow-xl">
+        <figure class="w-6/12 mx-auto sm:mx-auto"><img " src="${thumbnail_url}" alt="Movie"></figure>
           <div class="card-body">
           
             <h2 class="card-title">${title}</h2>
@@ -83,7 +89,7 @@ const displayCategoryNews = (data) => {
             }</p>
             <div class="card-actions mt-5 sm:justify-column justify-around">    
                 <div id="author-detail" class="w-4/12 xl:flex-row  sm:flex-col flex justify-start">
-                  <img class="w-3/12  rounded-full" p-2 src="${
+                  <img class="w-3/12 lg:block hidden sm:hidden rounded-full" p-2 src="${
                     author.img
                   }" alt="" />
                   <div class="ml-2">
