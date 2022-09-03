@@ -52,7 +52,7 @@ const displayCategoryNews = (data) => {
   const newsCard = document.getElementById("news-card");
   newsCard.textContent = "";
   newsCount.innerHTML = `
-      <h2>${data.length} news Found</h2>
+      <h2 class="text-center text-3xl">${data.length} News Found</h2>
       `;
 
   console.log(data);
@@ -70,7 +70,7 @@ const displayCategoryNews = (data) => {
     } = newses;
     const cardBody = document.createElement("div");
     cardBody.innerHTML = `
-        <div class="card card-side bg-base-100 shadow-xl">
+        <div class="card  card-side bg-base-100 shadow-xl">
             <figure><img src="${thumbnail_url}" alt="Movie"></figure>
           <div class="card-body">
             <h2 class="card-title">${title}</h2>
@@ -99,6 +99,7 @@ const displayCategoryNews = (data) => {
     newsCard.appendChild(cardBody);
   });
 };
+loadCategoryNews("01");
 
 // code for load new details
 
@@ -148,7 +149,7 @@ const showNewsDetails = (newsDetails) => {
         </div> 
     </div>
       <div class="modal-action">
-        <label for="my-modal-5" class="btn">Yay!</label>
+        <label for="my-modal-5" class="btn">Close!</label>
       </div>
   `;
 };
