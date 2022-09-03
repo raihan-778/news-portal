@@ -43,6 +43,7 @@ const loadCategoryNews = (id) => {
 };
 
 const displayCategoryNews = (data) => {
+  toggleSpinner(true);
   console.log(data.length);
   const noData = document.getElementById("no-data");
   if (data.length === 0) {
@@ -106,7 +107,7 @@ const displayCategoryNews = (data) => {
   });
   toggleSpinner(false);
 };
-loadCategoryNews("01");
+loadCategoryNews();
 
 // code for load new details
 
@@ -161,45 +162,46 @@ const showNewsDetails = (newsDetails) => {
       </div>
   `;
 };
-
+// code for blog accordion-modal
 const displayBlog = () => {
   myBlog = document.getElementById("blog-content");
   myBlog.innerHTML = `<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-  <div class="collapse-title text-xl font-medium">
-    Question: What is the diffrence Map, forEach, Filter ,Find
+    <div class="collapse-title text-xl font-medium">
+      Question: What is the diffrence Map, forEach, Filter ,Find
+    </div>
+    <div class="collapse-content"> 
+      <p>Map: it is used for loop throw an array, and return a new array.</p>
+        <p>forEach:
+        It is also used for loop throw an array but it will not return any array.</p>
+        <p>
+        Filter:
+        Filter is used to loop throw an array where condition is given, filter returns a new array with the value which meet the condition.</p>
+        <p>Find:Find is loop throw an array until it find the first value which meet the condition. After getting the first value it will stop loop and return the result.</p>
+    </div>
   </div>
-  <div class="collapse-content"> 
-    <p>Map: it is used for loop throw an array, and return a new array.</p>
-      <p>forEach:
-      It is also used for loop throw an array but it will not return any array.</p>
-      <p>
-      Filter:
-      Filter is used to loop throw an array where condition is given, filter returns a new array with the value which meet the condition.</p>
-      <p>Find:Find is loop throw an array until it find the first value which meet the condition. After getting the first value it will stop loop and return the result.</p>
+  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+    <div class="collapse-title text-xl font-medium">
+      Question: What is the diffrence between varables "var", "let", "const".
+    </div>
+    <div class="collapse-content"> 
+      <p>var: Var is oldest version of variable which is a global scope variable.</p>
+      <p> let: Let is an upgrade version of variable var.let is a block scope variable.</p>
+      <p> Const: It is a block scope variable & user can not update the value of const variable.</p>
+    </div>
   </div>
-</div>
-<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-  <div class="collapse-title text-xl font-medium">
-    Question: What is the diffrence between varables "var", "let", "const".
-  </div>
-  <div class="collapse-content"> 
-    <p>var: Var is oldest version of variable which is a global scope variable.</p>
-     <p> let: Let is an upgrade version of variable var.let is a block scope variable.</p>
-    <p> Const: It is a block scope variable & user can not update the value of const variable.</p>
-  </div>
-</div>
-<div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-  <div class="collapse-title text-xl font-medium">
-    Question: What is the diffrence between Arraw function and regular function.
-  </div>
-  <div class="collapse-content"> 
-    <p>Ans: Arrow Function: Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
+  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+    <div class="collapse-title text-xl font-medium">
+      Question: What is the diffrence between Arraw function and regular function.
+    </div>
+    <div class="collapse-content"> 
+      <p>Ans: Arrow Function: Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
 
-    <p>  Regular Function:It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
+      <p>  Regular Function:It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
+    </div>
   </div>
-</div>
-  `;
+    `;
 };
+
 loadNewsDetails();
 // code for spinner
 const toggleSpinner = (isLoading) => {

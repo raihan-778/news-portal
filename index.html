@@ -31,7 +31,7 @@
       <!-- section for header menu start -->
       <div class="navbar bg-base-100">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl">News For Truths </a>
+          <a class="btn btn-ghost normal-case rounded text-xl">Explore  <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-4xl">The Truths</span> </a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal p-0">
@@ -66,17 +66,15 @@
 
        
     <main>
+      <section>
+        <div id="blog-content" class="p-5">
+          <!-- dynamic content will be added here -->
+        </div>
+       </section>
       <h1 class="text-5xl text-center text-bold mb-5">
         Welcome To My News World
       </h1>
-      <section id="spinner" class="text-center">
-        <progress class="progress w-56" ></progress>
-      </section>
-         <section>
-          <div id="blog-content" class="p-5">
-            <!-- dynamic content will be added here -->
-          </div>
-         </section>
+         
          
         <!-- no found text start -->
         <div id="no-data" class="hidden">
@@ -89,6 +87,9 @@
         <!-- grid system start -->
         <div id="news-card" class="grid grid-cols-1 gap-4 p-7"></div>
         <!-- grid system end -->
+      </section>
+      <section id="spinner" class="text-center hidden">
+        <progress class="progress w-56" ></progress>
       </section>
     </main>
 
