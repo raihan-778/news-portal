@@ -78,18 +78,22 @@ const displayCategoryNews = (data) => {
               details.length > 250 ? details.slice(0, 250) + "..." : details
             }</p>
             <div class="card-actions mt-5 justify-around">    
-                <div id="author-detail" class="w-4/12 flex justify-between">
-                  <img class="w-2/12 rounded-full"  src="${
+                <div id="author-detail" class="w-4/12  flex justify-start">
+                  <img class="w-3/12 rounded-full" p-2 src="${
                     author.img
                   }" alt="" />
-                  <div>
-                    <span>Author Name: ${author.name}</span>
-                    <br /><span>Published Date:${author.published_date}</span>
+                  <div class="ml-2">
+                  <span class="text-xl text-bold"> ${
+                    author.name === null ? "No data found" : author.name
+                  }</span>
+                  <br /><span>${author.published_date}</span>
                   </div>
                 </div>
 
               <div id="news-view">
-              Total Views: <i class="fa-solid fa-eye"></i> ${total_view}
+               <i class="fa-solid fa-eye"></i> ${
+                 total_view === null ? "No data found" : total_view
+               }
               </div>
               <label for="my-modal-5" onclick='loadNewsDetails("${_id}")' class="btn btn-primary modal-button">Show Details</label>      
             </div>
@@ -105,6 +109,7 @@ loadCategoryNews("01");
 
 const loadNewsDetails = (id) => {
   const newsApi = `https://openapi.programming-hero.com/api/news/${id}`;
+  const spinnere = document.getElementById("spinner");
   fetch(newsApi)
     .then((res) => res.json())
     .then((data) => {
@@ -145,7 +150,7 @@ const showNewsDetails = (newsDetails) => {
       </div>
 
         <div id="news-view" class="mt-3">
-        Total Views: <i class="fa-solid fa-eye"></i> ${total_view}
+         <i class="fa-solid fa-eye"></i> ${total_view}
         </div> 
     </div>
       <div class="modal-action">
