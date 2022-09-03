@@ -23,8 +23,8 @@ const displayCategory = (data) => {
       const li = document.createElement("li");
       li.classList.add("text-green-900", "text-lg");
       li.innerHTML = `
-    <a onclick="loadCategoryNews('${category_id}')" >${category_name}</a>
-    `;
+        <a onclick="loadCategoryNews('${category_id}')" >${category_name}</a>
+        `;
       categoryHeader.appendChild(li);
     }
   });
@@ -51,8 +51,8 @@ const displayCategoryNews = (data) => {
   const newsCard = document.getElementById("news-card");
   newsCard.textContent = "";
   newsCount.innerHTML = `
-  <h2>${data.length} news Found</h2>
-  `;
+      <h2>${data.length} news Found</h2>
+      `;
 
   console.log(data);
   data.forEach((newses) => {
@@ -69,29 +69,32 @@ const displayCategoryNews = (data) => {
     } = newses;
     const cardBody = document.createElement("div");
     cardBody.innerHTML = `
-    <div class="card card-side bg-base-100 shadow-xl">
-  <figure><img src="${thumbnail_url}" alt="Movie"></figure>
-  <div class="card-body">
-    <h2 class="card-title">${title}</h2>
-    <p>${details.length > 250 ? details.slice(0, 250) + "..." : details}</p>
-    <div class="card-actions justify-end">
-        <div id="author-detail" class="flex">
-        <div>
-          <img class="w-1/6 rounded-2"  src="${author.img}" alt="" />
+        <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="${thumbnail_url}" alt="Movie"></figure>
+          <div class="card-body">
+            <h2 class="card-title">${title}</h2>
+            <p>${
+              details.length > 250 ? details.slice(0, 250) + "..." : details
+            }</p>
+            <div class="card-actions mt-5 justify-around">    
+                <div id="author-detail" class="w-4/12 flex justify-between">
+                  <img class="w-2/12 rounded-full"  src="${
+                    author.img
+                  }" alt="" />
+                  <div>
+                    <span>Author Name: ${author.name}</span>
+                    <br /><span>Published Date:${author.published_date}</span>
+                  </div>
+                </div>
+
+              <div id="news-view">
+              Total Views: <i class="fa-solid fa-eye"></i> ${total_view}
+              </div>
+              <label for="my-modal-5" class="btn btn-primary modal-button">Show Details</label>      
+            </div>
+          </div>
         </div>
-        <div>
-          <span>${author.name}</span>
-          <br /><span>Published Date:${author.published_date}</span>
-        </div>
-        </div>
-        <div id="news-view">
-          <i class="fa-solid fa-eye"></i>
-        </div>
-      <button class="btn btn-primary">Watch</button>
-    </div>
-  </div>
-</div>
-    `;
+        `;
     newsCard.appendChild(cardBody);
   });
 };
