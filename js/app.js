@@ -73,16 +73,17 @@ const displayCategoryNews = (data) => {
     } = newses;
     const cardBody = document.createElement("div");
     cardBody.innerHTML = `
-        <div class="card  card-side bg-base-100 shadow-xl">
-            <figure><img src="${thumbnail_url}" alt="Movie"></figure>
+        <div class="card card-side lg:xl:flex-row md:flex-row sm:flex-col  bg-base-100 shadow-xl">
+        <figure class="w-6/12"><img " src="${thumbnail_url}" alt="Movie"></figure>
           <div class="card-body">
+          
             <h2 class="card-title">${title}</h2>
             <p>${
               details.length > 250 ? details.slice(0, 250) + "..." : details
             }</p>
             <div class="card-actions mt-5 sm:justify-column justify-around">    
-                <div id="author-detail" class="w-4/12 sm:flex-column flex justify-start">
-                  <img class="w-3/12 rounded-full" p-2 src="${
+                <div id="author-detail" class="w-4/12 xl:flex-row  sm:flex-col flex justify-start">
+                  <img class="w-3/12  rounded-full" p-2 src="${
                     author.img
                   }" alt="" />
                   <div class="ml-2">
