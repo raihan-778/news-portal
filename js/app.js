@@ -186,13 +186,13 @@ const displayBlog = () => {
       Question: What is the diffrence Map, forEach, Filter ,Find
     </div>
     <div class="collapse-content"> 
-      <p><span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Map:</span> It is used for loop throw an array, and return a new array.</p>
-        <p><span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">forEach:</span>
+      <p class="text-2xl"><span class="text-2xl text-blue-500 text-bold">Map:</span> It is used for loop throw an array, and return a new array.</p>
+        <p><span class="text-2xl text-blue-500 text-bold"">forEach:</span>
         It is also used for loop throw an array but it will not return any array.</p>
-        <p><span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Filter:</span>
+        <p><span class="text-2xl text-blue-500 text-bold">Filter:</span>
       
         Filter is used to loop throw an array where condition is given, filter returns a new array with the value which meet the condition.</p>
-        <p><span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Find:</span>Find is loop throw an array until it find the first value which meet the condition. After getting the first value it will stop loop and return the result.</p>
+        <p><span class="text-2xl text-blue-500 text-bold"">Find:</span>Find is loop throw an array until it find the first value which meet the condition. After getting the first value it will stop loop and return the result.</p>
     </div>
   </div>
   <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
@@ -200,9 +200,9 @@ const displayBlog = () => {
       Question: What is the diffrence between varables "var", "let", "const".
     </div>
     <div class="collapse-content"> 
-      <p><span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">var:</span> Var is oldest version of variable which is a global scope variable.</p>
-      <p><span class="text-2xl text-gray-200 bg-blue-500 text-bold">Let:</span> Let is an upgrade version of variable var.let is a block scope variable.</p>
-      <p> <span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Const:</span>It is a block scope variable & user can not update the value of const variable.</p>
+      <p><span class="text-2xl text-blue-500 text-bold">var:</span> Var is oldest version of variable which is a global scope variable.</p>
+      <p><span class="text-2xl text-blue-500 text-bold"">Let:</span> Let is an upgrade version of variable var.let is a block scope variable.</p>
+      <p> <span class="text-2xl text-blue-500 text-bold">Const:</span>It is a block scope variable & user can not update the value of const variable.</p>
     </div>
   </div>
   <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
@@ -210,9 +210,9 @@ const displayBlog = () => {
       Question: What is the diffrence between Arraw function and regular function.
     </div>
     <div class="collapse-content"> 
-      <p class="text-bold">Ans:<span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Arrow Function:</span>  Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
+      <p class="text-bold">Ans:<span class="text-2xl text-blue-500 text-bold">Arrow Function:</span>  Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
 
-      <p> <span class="text-2xl text-gray-200 rounded-xl p-1 bg-blue-500 text-bold">Regular Function:</span> It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
+      <p> <span class="text-2xl text-blue-500 text-bold">Regular Function:</span> It is the older version of function. regular function must need to use curly brace.In regular function, function gets hoisting at top.</p>
     </div>
   </div>
     `;
