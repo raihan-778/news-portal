@@ -22,10 +22,17 @@ const displayCategory = (data) => {
       console.log(newArray);
       const li = document.createElement("li");
       li.classList.add(
-        "text-green-900",
+        "text-green-100",
         "font-bold",
         "cursor-pointer",
-        "hover:text-sky-300"
+        "hover:bg-teal-800",
+        "border-current",
+        "border",
+        "m-2",
+        "rounded-xl",
+        "p-3",
+        "text-center",
+        "bg-teal-500"
       );
       li.innerHTML = `
         <a onclick="loadCategoryNews('${category_id}')" >${category_name}</a>
