@@ -154,13 +154,15 @@ const showNewsDetails = (newsDetails) => {
   console.log(author);
   const modatContainer = document.getElementById("modal-box");
   modatContainer.innerHTML = `
-        <img src="${image_url}">
+        <img class="w-3/4 mx-auto" src="${image_url}">
       <h3 class="font-bold text-lg mt-5">
        ${details.length > 600 ? details.slice(0, 600) + "..." : details}
       </h3>
       <div class="flex-column mt-5">
       <div id="author-detail" class="w-4/12 flex justify-between">
-        <img class="w-2/12 rounded-full"  src="${author.img}" alt="" />
+        <img class="w-3/12 rounded-full lg:block hidden sm:hidden mr-2"  src="${
+          author.img
+        }" alt="" />
         <div>
           <span>Author Name: ${author.name}</span>
           <br /><span>Published Date:${author.published_date}</span>
