@@ -5,7 +5,8 @@ const categoryApi = `https://openapi.programming-hero.com/api/news/categories`;
 const loadCategoryData = () => {
   fetch(categoryApi)
     .then((res) => res.json())
-    .then((data) => displayCategory(data.data.news_category));
+    .then((data) => displayCategory(data.data.news_category))
+    .catch((error) => console.log(error));
 };
 loadCategoryData();
 
