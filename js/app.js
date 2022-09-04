@@ -14,12 +14,10 @@ const displayCategory = (data) => {
   const categoryHeader = document.getElementById("category-header");
   const newArray = [];
   data.forEach((category) => {
-    console.log(category);
     const { category_name, category_id } = category;
 
     if (newArray.indexOf(category_name) === -1) {
       newArray.push(category_name);
-      console.log(newArray);
       const li = document.createElement("li");
       li.classList.add(
         "text-green-100",
@@ -46,7 +44,6 @@ const displayCategory = (data) => {
 
 const loadCategoryNews = (id) => {
   const newsApi = `https://openapi.programming-hero.com/api/news/category/${id}`;
-  console.log(newsApi);
 
   fetch(newsApi)
     .then((res) => res.json())
@@ -56,7 +53,6 @@ const loadCategoryNews = (id) => {
 
 const displayCategoryNews = (data) => {
   toggleSpinner(true);
-  console.log(data.length);
   const noData = document.getElementById("no-data");
   if (data.length === 0) {
     noData.classList.remove("hidden");
@@ -70,10 +66,8 @@ const displayCategoryNews = (data) => {
       <h2 class="text-center font-bold text-3xl"><span class="text-blue-500">${data.length}</span> News Found</h2>
       `;
 
-  console.log(data);
   data.sort((a, b) => b.total_view - a.total_view);
   data.forEach((newses) => {
-    console.log(newses);
     const {
       author,
       details,
@@ -138,8 +132,6 @@ const loadNewsDetails = (id) => {
 };
 
 const showNewsDetails = (newsDetails) => {
-  console.log(newsDetails);
-
   const {
     author,
     details,
@@ -150,8 +142,7 @@ const showNewsDetails = (newsDetails) => {
     title,
     rating,
   } = newsDetails;
-  console.log(total_view);
-  console.log(author);
+
   const modatContainer = document.getElementById("modal-box");
   modatContainer.innerHTML = `
         <img class="w-3/4 mx-auto" src="${image_url}">
@@ -207,7 +198,7 @@ const displayBlog = () => {
   </div>
   <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
     <div class="collapse-title text-xl font-medium">
-      Question: What is the diffrence between Arraw function and regular function.
+      Question: What is the diffrence between Arrow function and regular function.
     </div>
     <div class="collapse-content"> 
       <p><span class="text-2xl text-blue-500 text-bold">Arrow Function:</span>  Arrow function is introduced in Es6 update.For single expression Arrow function don not need to use curly brace.In arrow function, function get hoisted where you define. So, if you call the function before initialisation you will get referenceError.</p>
@@ -217,10 +208,10 @@ const displayBlog = () => {
   </div>
   <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
     <div class="collapse-title text-xl font-medium">
-    Question: Why should we use templet string in javaScript?
+    Question: Why should we use template string in javaScript?
     </div>
     <div class="collapse-content"> 
-      <p><span class="text-2xl text-blue-500 text-bold">Templet String:</span> Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. <br>Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.</p>
+      <p><span class="text-2xl text-blue-500 text-bold">Template String:</span> Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. <br>Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.</p>
     </div>
     </div>
   
