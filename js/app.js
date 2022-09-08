@@ -34,7 +34,7 @@ const displayCategory = (data) => {
         "bg-teal-500"
       );
       li.innerHTML = `
-        <a onclick="loadCategoryNews('${category_id}')" >${category_name}</a>
+        <a onclick="loadCategoryNews('${category_id}','${category_name}')" >${category_name}</a>
         `;
       categoryHeader.appendChild(li);
     }
@@ -43,17 +43,16 @@ const displayCategory = (data) => {
 
 //code for load category News
 
-const loadCategoryNews = (id) => {
+const loadCategoryNews = (id, name) => {
   const newsApi = `https://openapi.programming-hero.com/api/news/category/${id}`;
-
+  toggleSpinner(true);
   fetch(newsApi)
     .then((res) => res.json())
-    .then((data) => displayCategoryNews(data.data))
+    .then((data) => displayCategoryNews(data.data, name))
     .catch((error) => console.log(error));
 };
 
-const displayCategoryNews = (data) => {
-  toggleSpinner(true);
+const displayCategoryNews = (data, name) => {
   const noData = document.getElementById("no-data");
   if (data.length === 0) {
     noData.classList.remove("hidden");
@@ -64,7 +63,9 @@ const displayCategoryNews = (data) => {
   const newsCard = document.getElementById("news-card");
   newsCard.textContent = "";
   newsCount.innerHTML = `
-      <h2 class="text-center font-bold text-3xl"><span class="text-blue-500">${data.length}</span> News Found</h2>
+      <h2 class="text-center font-bold text-3xl"><span class="text-blue-500">${
+        data.length === 0 ? "No" : data.length
+      }</span> News Found under <span class="text-red-500">${name} </span>Category</h2>
       `;
 
   data.sort((a, b) => b.total_view - a.total_view);
@@ -116,7 +117,7 @@ const displayCategoryNews = (data) => {
   });
   toggleSpinner(false);
 };
-loadCategoryNews();
+// loadCategoryNews();
 
 // code for load new details
 
@@ -144,8 +145,8 @@ const showNewsDetails = (newsDetails) => {
     rating,
   } = newsDetails;
 
-  const modatContainer = document.getElementById("modal-box");
-  modatContainer.innerHTML = `
+  const modalContainer = document.getElementById("modal-box");
+  modalContainer.innerHTML = `
         <img class="w-3/4 mx-auto" src="${image_url}">
       <h3 class="font-bold text-lg mt-5">
        ${details.length > 600 ? details.slice(0, 600) + "..." : details}
@@ -229,4 +230,3 @@ const toggleSpinner = (isLoading) => {
     loaderSection.classList.add("hidden");
   }
 };
-toggleSpinner(true);
