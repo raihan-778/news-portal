@@ -157,13 +157,17 @@ const showNewsDetails = (newsDetails) => {
           author.img
         }" alt="" />
         <div>
-          <span>Author Name: ${author.name}</span>
+          <span>Author Name: ${
+            author.name === null ? "no data found" : author.name
+          }</span>
           <br /><span>Published Date:${author.published_date}</span>
         </div>
       </div>
 
         <div id="news-view" class="mt-3">
-         <i class="fa-solid fa-eye"></i> ${total_view}
+         <i class="fa-solid fa-eye"></i> ${
+           total_view === null ? "no view" : total_view
+         }
         </div> 
     </div>
       <div class="modal-action">
